@@ -1,69 +1,77 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Feira Empreendedor
 
-Currently, two official plugins are available:
+Projeto frontend desenvolvido com **React 19**, **Vite**, **Tailwind CSS** e animações com **Framer Motion**, voltado para a apresentação de uma feira de empreendedores.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias e Ferramentas
 
-## Expanding the ESLint configuration
+- [React 19](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Lucide Icons](https://lucide.dev/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [React Countdown](https://www.npmjs.com/package/react-countdown)
+- ESLint + TypeScript ESLint
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Scripts Disponíveis
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+# Inicia o servidor de desenvolvimento
+npm run dev
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+# Compila o projeto e gera os arquivos de produção
+npm run build
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Visualiza a build localmente
+npm run preview
+
+# Executa o linter para verificar problemas de código
+npm run lint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 📁 Estrutura do Projeto
+├── public/               # Arquivos estáticos
+├── src/
+│   ├── assets/           # Imagens e recursos
+│   ├── components/       # Componentes reutilizáveis
+│   ├── pages/            # Páginas principais
+│   ├── styles/           # Arquivos de estilo (Tailwind, etc)
+│   ├── App.tsx           # Componente principal
+│   └── main.tsx          # Ponto de entrada do app
+├── tailwind.config.js    # Configuração do Tailwind
+├── tsconfig.json         # Configuração do TypeScript
+└── vite.config.ts        # Configuração do Vite
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### ✅ Requisitos
+- Node.js (recomendado: ^18.x)
+- npm (ou yarn / pnpm)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🧪 Instalação
+Clone o repositório e instale as dependências:
+```bash
+git clone https://github.com/seu-usuario/feira-empreendor.git
+cd feira-empreendor
+npm install
 ```
+
+#### 🖥️ Rodando o Projeto
+```bash
+npm run dev
+```
+> Abra http://localhost:5173 no seu navegador.
+
+### 📦 Build para Produção
+```bash
+npm run build
+```
+> Os arquivos finais estarão na pasta dist/.
+
+### 🧹 Código Limpo
+Para verificar a qualidade do código com o ESLint:
+```bash
+npm run lint
+```
+
+Feito com 💼 por Lay Matos.
