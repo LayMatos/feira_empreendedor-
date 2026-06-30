@@ -11,7 +11,7 @@ import SponsorshipSection from "./components/Patrocinio";
 
 function App() {
   return (
-    <div className="font-sans antialiased">
+    <div className="font-sans antialiased overflow-x-hidden w-full max-w-full">
       <Header />
       <Hero />
       <Metricas />

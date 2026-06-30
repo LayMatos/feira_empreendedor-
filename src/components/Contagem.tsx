@@ -47,13 +47,13 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
   const labels: TimeLeftKeys[] = ["dias", "horas", "min", "seg"];
 
   return (
-    <div className="mt-6 flex justify-center space-x-4 text-center">
+    <div className="mt-6 flex justify-center gap-2 sm:gap-4 text-center flex-wrap px-2">
       {labels.map((label) => (
         <div
           key={label}
-          className="bg-white bg-opacity-90 rounded-xl shadow-md px-4 py-2"
+          className="bg-white bg-opacity-90 rounded-xl shadow-md px-3 py-2 sm:px-4 min-w-[64px] sm:min-w-[72px]"
         >
-          <span className="block text-2xl font-bold text-[#3256FB]">
+          <span className="block text-xl sm:text-2xl font-bold text-[#3256FB]">
             {timeLeft[label]}
           </span>
           <span className="text-xs text-gray-700">{label}</span>
@@ -66,13 +66,23 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
 const Hero: React.FC = () => {
   return (
     <section
-      className="relative w-screen h-screen overflow-hidden flex justify-center items-center font-nexa text-white"
+      className="relative w-full h-screen overflow-hidden flex justify-center items-center font-nexa text-white"
       style={{ backgroundColor: "#FF8F5A" }}
     >
       {/* Vídeo de fundo */}
-      <div className="relative z-0 w-[80vw] h-[45vw] max-w-[1000px] max-h-[562px] rounded-lg overflow-hidden shadow-lg mt-10">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <iframe
-          className="w-full h-full pointer-events-none"
+          className="pointer-events-none border-0"
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            width: "177.78vh",
+            height: "56.25vw",
+            minWidth: "100%",
+            minHeight: "100%",
+            transform: "translate(-50%, -50%)",
+          }}
           src="https://www.youtube.com/embed/49zm_M6nF9w?autoplay=1&mute=1&loop=1&playlist=49zm_M6nF9w&controls=0&modestbranding=1&showinfo=0&rel=0"
           title="Vídeo de fundo"
           frameBorder="0"
@@ -80,24 +90,29 @@ const Hero: React.FC = () => {
           allowFullScreen
         ></iframe>
 
-        {/* Sobreposição com gradiente preto para legibilidade */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-black/30"></div>
+        {/* Opacidade sobre o vídeo para as letras aparecerem */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom right, rgba(0,0,0,0.7), rgba(0,0,0,0.5), rgba(0,0,0,0.6))",
+          }}
+        />
       </div>
 
       {/* Conteúdo central */}
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center max-w-6xl mx-auto">
-        <h2 className="text-sm font-bold uppercase text-white tracking-wide text-[24px]">
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 sm:px-6 text-center w-full max-w-6xl mx-auto">
+        <h2 className="text-[10px] sm:text-xs md:text-sm lg:text-base font-bold uppercase text-white tracking-wide leading-snug max-w-xl">
           FEIRA DO EMPREENDEDOR + SIARÁ TECH SUMMIT 2025
         </h2>
 
-        <h1 className="mt-3 text-3xl md:text-5xl font-extrabold text-white leading-tight max-w-3xl text-[48px]">
-          O MAIOR MOVIMENTO DE <br />
-          EMPREENDEDORISMO E
-          <br />
-          INOVAÇÃO DO CEARÁ
+        <h1 className="mt-3 sm:mt-4 font-extrabold text-white leading-[1.15] w-full max-w-4xl text-[clamp(1.35rem,5.2vw,3rem)] px-1">
+          O MAIOR MOVIMENTO DE{" "}
+          <span className="block sm:inline">EMPREENDEDORISMO E</span>{" "}
+          <span className="block sm:inline">INOVAÇÃO DO CEARÁ</span>
         </h1>
 
-        <p className="mt-4 text-lg text-white text-[28px]">
+        <p className="mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-white leading-relaxed max-w-lg">
           De{" "}
           <span className="font-bold text-[#75F4C3]">8 a 10 de outubro</span> no
           Centro de Eventos do Ceará

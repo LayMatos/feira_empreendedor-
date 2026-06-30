@@ -1,54 +1,96 @@
-import React from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, Mail } from "lucide-react";
+import OndaAnimada from "./OndaAnimada";
 import image from "../assets/image.png";
 
-const NewsBlock: React.FC = () => {
+const NewsBlock = () => {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    window.location.href = "#quero-participar";
+  };
+
   return (
     <section
-      className="relative w-screen h-screen overflow-hidden flex justify-center items-center font-nexa"
-      style={{ backgroundColor: "#FF8F5A" }}
+      id="novidades"
+      className="relative w-full overflow-x-hidden font-nexa bg-[#EF3970] -mt-px"
     >
-      {/* Bloco com imagem de fundo e gradientes aplicados */}
-      <div
-        className="relative z-0 w-[80vw] h-[45vw] max-w-[1000px] max-h-[562px] mt-10 shadow-lg"
-        style={{
-          borderRadius: "50px",
-          background: `
-            linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
-            linear-gradient(180deg, rgba(26, 60, 91, 0.00) 0%, rgba(26, 60, 91, 0.40) 23.12%, rgba(26, 60, 91, 0.68) 51.83%, #1A3C5B 100%),
-            url(${image}) lightgray 0px -373.821px / 100% 208.88% no-repeat
-          `,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
+      <div className="relative px-4 sm:px-6 pt-6 sm:pt-10 pb-14 sm:pb-20 md:pb-24">
+        <div className="pointer-events-none absolute top-10 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
+        <div className="pointer-events-none absolute bottom-20 right-0 w-72 h-72 bg-[#FF8F5A]/15 rounded-full blur-3xl" />
 
-      {/* Conteúdo sobreposto */}
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center max-w-6xl mx-auto">
-        <h1 className="mt-3 text-3xl md:text-5xl font-extrabold text-white leading-tight max-w-3xl text-[48px]">
-          Acompanhe as novidades do evento
-        </h1>
+        <div className="relative max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="relative rounded-3xl sm:rounded-[40px] overflow-hidden shadow-2xl"
+          >
+            {/* Imagem de fundo */}
+            <img
+              src={image}
+              alt="Palco do evento FE + STS"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
 
-        <p className="mt-4 text-lg text-white text-[28px]">
-          Fique por dentro das últimas notícias, bastidores, confirmações e <br />
-          conteúdos especiais sobre tudo que está por vir na FE + STS 2025
-        </p>
+            {/* Overlays */}
+            <div className="absolute inset-0 bg-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1A3C5B]/90 via-[#1A3C5B]/50 to-transparent" />
 
-      <a
-  href="#quero-participar"
-  className="mt-6 flex items-center justify-center gap-2 w-[70vw] max-w-[700px] h-[52px] p-2 border border-white text-white rounded-full font-semibold bg-transparent hover:bg-white/10 transition-colors shadow"
->
-  <span>Quero receber novidades</span>
-  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-    <path d="M13 21.3066C8.3 21.3066 4.5 17.5066 4.5 12.8066C4.5 8.10664 8.3 4.30664 13 4.30664C17.7 4.30664 21.5 8.10664 21.5 12.8066C21.5 17.5066 17.7 21.3066 13 21.3066ZM13 5.30664C8.85 5.30664 5.5 8.65664 5.5 12.8066C5.5 16.9566 8.85 20.3066 13 20.3066C17.15 20.3066 20.5 16.9566 20.5 12.8066C20.5 8.65664 17.15 5.30664 13 5.30664Z" fill="white"/>
-    <path d="M17.15 13.6564L13 9.50644L8.85002 13.6564L8.15002 12.9564L13 8.10645L17.85 12.9564L17.15 13.6564Z" fill="white"/>
-    <path d="M12.5 8.80664H13.5V17.3066H12.5V8.80664Z" fill="white"/>
-  </svg>
-</a>
+            {/* Conteúdo */}
+            <div className="relative z-10 flex flex-col items-center text-center px-5 sm:px-10 md:px-14 py-12 sm:py-16 md:py-20">
+              <span className="inline-block mb-4 px-4 py-1 text-xs font-bold uppercase tracking-widest text-white/90 bg-white/15 rounded-full backdrop-blur-sm">
+                Newsletter
+              </span>
 
+              <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold leading-tight max-w-2xl">
+                Acompanhe as novidades do evento
+              </h2>
 
+              <p className="mt-4 sm:mt-5 text-white/90 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed">
+                Fique por dentro das últimas notícias, bastidores, confirmações e
+                conteúdos especiais sobre tudo que está por vir na FE + STS 2025.
+              </p>
 
+              <form
+                onSubmit={handleSubmit}
+                className="mt-8 sm:mt-10 w-full max-w-lg flex flex-col sm:flex-row gap-3"
+              >
+                <div className="relative flex-1">
+                  <Mail
+                    size={18}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 pointer-events-none"
+                  />
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Seu melhor e-mail"
+                    required
+                    className="w-full pl-11 pr-4 py-3.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 focus:bg-white/20 transition-all"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 rounded-full bg-white text-[#EF3970] text-sm sm:text-base font-bold hover:bg-[#FF8F5A] hover:text-white transition-all shadow-lg hover:shadow-xl active:scale-[0.98]"
+                >
+                  <span>Quero receber novidades</span>
+                  <ArrowRight size={18} />
+                </button>
+              </form>
 
+              <p className="mt-4 text-white/60 text-xs sm:text-sm">
+                Sem spam. Apenas conteúdos relevantes sobre o evento.
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </div>
+
+      <OndaAnimada tipo="inferior" fill="#FFFFFF" corAcima="#EF3970" />
     </section>
   );
 };

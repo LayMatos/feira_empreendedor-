@@ -3,7 +3,7 @@ import logo_summit from "../assets/Logo_Summit.png";
 
 const Footer = () => {
   return (
-    <footer className="text-white py-10 px-4" style={{ backgroundColor: "#000" }}>
+    <footer className="relative text-white pt-2 pb-10 px-4 -mt-px" style={{ backgroundColor: "#000" }}>
       <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row justify-between items-center gap-6">
         
         {/* Direitos */}
