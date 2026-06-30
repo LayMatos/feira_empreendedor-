@@ -3,7 +3,7 @@
 Landing page institucional do maior evento de empreendedorismo, tecnologia e inovação do Ceará — desenvolvida com **React 19**, **TypeScript**, **Tailwind CSS** e **Framer Motion**.
 
 <p align="center">
-  <img src="docs/screenshots/01-hero-desktop.png" alt="Hero — Feira do Empreendedor + Siará Tech Summit" width="100%" />
+  <img src="docs/screenshots/01-hero-desktop.png" alt="Hero — Feira do Empreendedor + Siará Tech Summit" width="900" />
 </p>
 
 <p align="center">
@@ -30,67 +30,66 @@ Site one-page responsivo para divulgação da **Feira do Empreendedor** e do **S
 
 ## Prévia do site
 
-### Página completa
+<details>
+<summary><strong>Visão geral da página (clique para expandir)</strong></summary>
+<br />
+<p align="center">
+  <img src="docs/screenshots/03-visao-geral.png" alt="Visão geral do site" width="900" />
+</p>
+</details>
+
+### Hero — Desktop
 
 <p align="center">
-  <img src="docs/screenshots/03-pagina-completa.png" alt="Página completa do site" width="100%" />
+  <img src="docs/screenshots/01-hero-desktop.png" alt="Hero desktop" width="900" />
 </p>
 
-### Hero — Desktop e mobile
+### Hero — Mobile
 
-<table>
-  <tr>
-    <td width="65%">
-      <img src="docs/screenshots/01-hero-desktop.png" alt="Hero desktop" width="100%" />
-      <p align="center"><em>Desktop</em></p>
-    </td>
-    <td width="35%">
-      <img src="docs/screenshots/02-hero-mobile.png" alt="Hero mobile" width="100%" />
-      <p align="center"><em>Mobile</em></p>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="docs/screenshots/02-hero-mobile.png" alt="Hero mobile" width="320" />
+</p>
 
 ### Métricas do evento
 
 <p align="center">
-  <img src="docs/screenshots/04-metricas.png" alt="Seção de métricas — inscritos, palestras, expositores e startups" width="100%" />
+  <img src="docs/screenshots/04-metricas.png" alt="Seção de métricas" width="900" />
 </p>
 
 ### Seção institucional
 
 <p align="center">
-  <img src="docs/screenshots/05-secao-institucional.png" alt="Seção Por um Ceará mais empreendedor" width="100%" />
+  <img src="docs/screenshots/05-secao-institucional.png" alt="Seção institucional" width="900" />
 </p>
 
-### Inscrições — Feira do Empreendedor e Siará Tech Summit
+### Inscrições
 
 <p align="center">
-  <img src="docs/screenshots/06-inscricoes.png" alt="Cards de inscrição dos eventos" width="100%" />
+  <img src="docs/screenshots/06-inscricoes.png" alt="Cards de inscrição" width="900" />
 </p>
 
 ### Palestrantes 2025
 
 <p align="center">
-  <img src="docs/screenshots/07-palestrantes.png" alt="Grid de palestrantes confirmados" width="100%" />
+  <img src="docs/screenshots/07-palestrantes.png" alt="Palestrantes confirmados" width="900" />
 </p>
 
 ### Galeria — Momentos marcantes
 
 <p align="center">
-  <img src="docs/screenshots/08-galeria-carrossel.png" alt="Carrossel de fotos da última edição" width="100%" />
+  <img src="docs/screenshots/08-galeria-carrossel.png" alt="Carrossel de fotos" width="900" />
 </p>
 
 ### Newsletter
 
 <p align="center">
-  <img src="docs/screenshots/09-newsletter.png" alt="Seção de novidades e captura de e-mail" width="100%" />
+  <img src="docs/screenshots/09-newsletter.png" alt="Newsletter" width="900" />
 </p>
 
 ### Patrocínio
 
 <p align="center">
-  <img src="docs/screenshots/10-patrocinio.png" alt="Seção de patrocinadores" width="100%" />
+  <img src="docs/screenshots/10-patrocinio.png" alt="Patrocinadores" width="900" />
 </p>
 
 ---
@@ -162,22 +161,15 @@ feira_empreendedor-/
 ## Instalação e execução
 
 ```bash
-# Clone o repositório
 git clone https://github.com/seu-usuario/feira_empreendedor-.git
 cd feira_empreendedor-
-
-# Instale as dependências
 npm install
-
-# Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
 Acesse [http://localhost:5173](http://localhost:5173) no navegador.
 
 ### Compilar CSS do Tailwind
-
-Após alterar classes Tailwind nos componentes:
 
 ```bash
 npx tailwindcss -i ./src/input.css -o ./src/output.css
@@ -199,7 +191,7 @@ npx playwright install chromium
 node scripts/capture-screenshots.mjs
 ```
 
-As imagens são salvas em `docs/screenshots/`.
+As imagens são salvas em `docs/screenshots/` com largura fixa de **1280px** para exibição correta no GitHub.
 
 ### Lint
 
