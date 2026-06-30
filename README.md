@@ -229,10 +229,6 @@ npm run lint
 
 ---
 
-## Licença e créditos
-
-Projeto desenvolvido para o **Sebrae Ceará**.
-
 <p align="center">
   Feito com dedicação por <strong>Lay Matos</strong>
 </p>
