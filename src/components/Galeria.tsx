@@ -71,7 +71,7 @@ const SpeakerCard = ({ nome, cargo, imagem, index }: SpeakerCardProps) => (
 
 const Galeria = () => {
   return (
-    <section className="relative bg-[#EF3970] overflow-x-hidden font-nexa -mt-px">
+    <section id="palestrantes" className="relative bg-[#EF3970] overflow-x-hidden font-nexa -mt-px">
       <OndaAnimada tipo="entrada" fill="#EF3970" corAcima="#FF8F5A" />
       <div className="pointer-events-none absolute top-32 -left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
       <div className="pointer-events-none absolute bottom-32 -right-16 w-72 h-72 bg-[#FF8F5A]/15 rounded-full blur-3xl" />
