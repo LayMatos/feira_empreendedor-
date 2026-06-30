@@ -3,13 +3,7 @@
 Landing page institucional do maior evento de empreendedorismo, tecnologia e inovação do Ceará — desenvolvida com **React 19**, **TypeScript**, **Tailwind CSS** e **Framer Motion**.
 
 <p align="center">
-  <img src="src/assets/Logo_Summit.png" alt="Siará Tech Summit" height="48" />
-  &nbsp;&nbsp;
-  <img src="src/assets/logo_empreendedor.png" alt="Feira do Empreendedor Sebrae" height="48" />
-</p>
-
-<p align="center">
-  <img src="src/assets/image.png" alt="Palco do evento FE + STS" width="100%" style="max-width: 900px; border-radius: 16px;" />
+  <img src="docs/screenshots/01-hero-desktop.png" alt="Hero — Feira do Empreendedor + Siará Tech Summit" width="100%" />
 </p>
 
 <p align="center">
@@ -20,7 +14,7 @@ Landing page institucional do maior evento de empreendedorismo, tecnologia e ino
 
 ## Sobre o projeto
 
-Site one-page responsivo para divulgação da **Feira do Empreendedor** e do **Siará Tech Summit (STS)**. O layout apresenta contagem regressiva, métricas da edição anterior, inscrições, palestrantes, galeria de momentos, newsletter e área de patrocínio — com identidade visual em laranja, rosa e azul, ondas SVG animadas e transições suaves entre seções.
+Site one-page responsivo para divulgação da **Feira do Empreendedor** e do **Siará Tech Summit (STS)**. O layout apresenta contagem regressiva, métricas da edição anterior, inscrições, palestrantes, galeria de momentos, newsletter e área de patrocínio — com identidade visual em laranja, rosa e azul, ondas SVG entre seções e animações suaves.
 
 ### Destaques
 
@@ -29,41 +23,74 @@ Site one-page responsivo para divulgação da **Feira do Empreendedor** e do **S
 - Cards de inscrição para Feira do Empreendedor e Siará Tech Summit
 - Carrossel de momentos marcantes com autoplay e controles acessíveis
 - Grid de palestrantes com hover e animações de entrada
-- Formulário de newsletter e ondas de transição entre seções
-- Layout mobile-first com breakpoints customizados
+- Formulário de newsletter e transições onduladas entre seções
+- Layout mobile-first e totalmente responsivo
 
 ---
 
-## Prévia das seções
+## Prévia do site
 
-### Momentos marcantes
-
-Carrossel interativo com fotos da última edição, barra de progresso, miniaturas e CTA de participação.
+### Página completa
 
 <p align="center">
-  <img src="src/assets/momento1.png" alt="Abertura do evento" width="45%" />
-  <img src="src/assets/momento2.png" alt="Palco principal" width="45%" />
+  <img src="docs/screenshots/03-pagina-completa.png" alt="Página completa do site" width="100%" />
 </p>
 
+### Hero — Desktop e mobile
+
+<table>
+  <tr>
+    <td width="65%">
+      <img src="docs/screenshots/01-hero-desktop.png" alt="Hero desktop" width="100%" />
+      <p align="center"><em>Desktop</em></p>
+    </td>
+    <td width="35%">
+      <img src="docs/screenshots/02-hero-mobile.png" alt="Hero mobile" width="100%" />
+      <p align="center"><em>Mobile</em></p>
+    </td>
+  </tr>
+</table>
+
+### Métricas do evento
+
 <p align="center">
-  <img src="src/assets/momento3.png" alt="Expositores e público" width="45%" />
-  <img src="src/assets/momento4.png" alt="Networking e conexões" width="45%" />
+  <img src="docs/screenshots/04-metricas.png" alt="Seção de métricas — inscritos, palestras, expositores e startups" width="100%" />
 </p>
 
-### Palestrantes
-
-Grid responsivo com cards em destaque para os nomes confirmados da programação.
+### Seção institucional
 
 <p align="center">
-  <img src="src/assets/images.png" alt="Palestrante - Amanda Graciano" width="280" style="border-radius: 16px;" />
+  <img src="docs/screenshots/05-secao-institucional.png" alt="Seção Por um Ceará mais empreendedor" width="100%" />
+</p>
+
+### Inscrições — Feira do Empreendedor e Siará Tech Summit
+
+<p align="center">
+  <img src="docs/screenshots/06-inscricoes.png" alt="Cards de inscrição dos eventos" width="100%" />
+</p>
+
+### Palestrantes 2025
+
+<p align="center">
+  <img src="docs/screenshots/07-palestrantes.png" alt="Grid de palestrantes confirmados" width="100%" />
+</p>
+
+### Galeria — Momentos marcantes
+
+<p align="center">
+  <img src="docs/screenshots/08-galeria-carrossel.png" alt="Carrossel de fotos da última edição" width="100%" />
+</p>
+
+### Newsletter
+
+<p align="center">
+  <img src="docs/screenshots/09-newsletter.png" alt="Seção de novidades e captura de e-mail" width="100%" />
 </p>
 
 ### Patrocínio
 
-Seção dedicada a apoiadores e parceiros do evento.
-
 <p align="center">
-  <img src="src/assets/patrocinio.png" alt="Área de patrocínio" width="360" style="border-radius: 16px;" />
+  <img src="docs/screenshots/10-patrocinio.png" alt="Seção de patrocinadores" width="100%" />
 </p>
 
 ---
@@ -97,16 +124,14 @@ Seção dedicada a apoiadores e parceiros do evento.
 
 ```
 feira_empreendedor-/
+├── docs/
+│   └── screenshots/        # Prints do site para o README
 ├── public/
 │   └── fonts/              # Fonte Nexa
+├── scripts/
+│   └── capture-screenshots.mjs
 ├── src/
 │   ├── assets/             # Imagens e logos
-│   │   ├── image.png
-│   │   ├── images.png
-│   │   ├── logo_empreendedor.png
-│   │   ├── Logo_Summit.png
-│   │   ├── momento1.png … momento4.png
-│   │   └── patrocinio.png
 │   ├── components/
 │   │   ├── Contagem.tsx        # Hero + vídeo + countdown
 │   │   ├── Header.tsx          # Navegação fixa
@@ -120,11 +145,8 @@ feira_empreendedor-/
 │   │   ├── Footer.tsx          # Rodapé
 │   │   └── OndaAnimada.tsx     # Ondas SVG entre seções
 │   ├── App.tsx
-│   ├── main.tsx
-│   ├── index.css
-│   └── output.css              # CSS compilado do Tailwind
+│   └── main.tsx
 ├── tailwind.config.js
-├── vite.config.ts
 └── package.json
 ```
 
@@ -168,7 +190,16 @@ npm run build
 npm run preview
 ```
 
-Os arquivos finais ficam na pasta `dist/`.
+### Gerar novos prints do site
+
+Com o servidor rodando (`npm run dev`):
+
+```bash
+npx playwright install chromium
+node scripts/capture-screenshots.mjs
+```
+
+As imagens são salvas em `docs/screenshots/`.
 
 ### Lint
 
@@ -209,10 +240,6 @@ npm run lint
 ## Licença e créditos
 
 Projeto desenvolvido para o **Sebrae Ceará**.
-
-<p align="center">
-  <img src="src/assets/Logo_feira.png" alt="Logo Feira do Empreendedor" height="40" />
-</p>
 
 <p align="center">
   Feito com dedicação por <strong>Lay Matos</strong>
